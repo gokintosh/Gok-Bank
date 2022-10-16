@@ -2,6 +2,11 @@
 spring:
   application:
     name: user-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8181/auth/realms/banking-service/protocol/openid-connect/certs
 
 
 eureka:
