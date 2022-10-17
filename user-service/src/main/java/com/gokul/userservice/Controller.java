@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user/register")
 public class Controller {
 
     @GetMapping()
@@ -17,8 +17,15 @@ public class Controller {
         return "Gokul"+principal.getName();
     }
 
-    @PostMapping("/register")
+    @PostMapping()
     public String registerUser(){
         return "Registered!!";
     }
+
+//    todo
+//    separate register endpoint
+//    login fuctionality
+//    minus amount from account
+
+
 }

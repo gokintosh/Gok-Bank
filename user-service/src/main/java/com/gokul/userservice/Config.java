@@ -19,6 +19,7 @@ public class Config extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers("user/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .oauth2ResourceServer()
