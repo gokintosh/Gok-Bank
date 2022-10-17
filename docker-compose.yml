@@ -7,3 +7,8 @@ services:
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
+
+    volumes:
+      - ./keycloak_data:/opt/jboss/keycloak/standalone/data/
+
+

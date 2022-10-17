@@ -6,17 +6,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user/register")
 public class Controller {
 
     @GetMapping()
-    public String returnName(){
-        return "Gokul";
+    public String returnName(Principal principal){
+        return "Gokul"+principal.getName();
     }
 
-    @PostMapping("/register")
+    @PostMapping()
     public String registerUser(){
         return "Registered!!";
     }
+
+//    todo
+//    separate register endpoint
+//    login fuctionality
+//    minus amount from account
+
+
 }

@@ -21,7 +21,7 @@ spring:
           internet-banking-core-client:
             provider: keycloak
             client-id: banking-client
-            client-secret: rLtwqUNq2yhNIfjDe9H6cuUghA0uTghh
+            client-secret: nFe4k8BPAWbISCe4pFFafxfFap6a8Ps4
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8181/login/oauth2/code/keycloak
             scope: openid
@@ -31,6 +31,8 @@ spring:
 
   cloud:
     gateway:
+      default-filters:
+        - TokenRelay
       routes:
         ## USER SERVICE
         - id: user-service
